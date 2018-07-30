@@ -4,5 +4,9 @@ Rails.application.routes.draw do
   resources :posts, only: [:new, :create, :show]
   resources :comments, only: [:new, :create]
 
+  get 'signup', to: 'users#new', as: 'signup'
+  get 'login', to: 'sessions#new', as: 'login'
+  post 'sessions', to: 'sessions#create', as: 'sessions'
+  delete 'logout', to: 'sessions#destroy', as: 'logout'
 
 end
