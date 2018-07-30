@@ -10,6 +10,13 @@
   </head>
 
   <body>
+    <h2>F2G</h2>
+    <% if logged_in? %>
+      <%= button_to "Logout", logout_path, method: :delete %>
+    <% else %>
+      <%= link_to "Login", login_path %> / <%= link_to "Sign up", signup_path %>
+    <% end %>
+    </nav>
     <%= yield %>
   </body>
 </html>
