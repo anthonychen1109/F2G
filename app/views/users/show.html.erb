@@ -19,19 +19,12 @@
     <div class="user-post-list">
       <% @posts.each do |post| %>
       <div class="user-posts">
-        <div class="user-posts-location">
-          <h6><%= post.location %></h6>
-        </div>
         <div class="user-posts-image">
-          <%= image_tag post.post_image %>
-        </div>
-        <div class="user-posts-caption">
-          <p><%= post.caption %></p>
+          <%= image_tag post.post_pic, class: 'post-image' %>
         </div>
       </div>
       <% end %>
     </div>
-
 
     <%= link_to "create post", new_post_path %>
   </div>
