@@ -1,11 +1,25 @@
+
 <h1>Name: <%= @user.name %></h1>
 <h2>Bio: <%= @user.bio %></h2>
-<%= image_tag @user.avatar %>
+
+  <%= image_tag @user.profile_pic %>
+
+
 
 <% @posts.each do |post| %>
   <%= post.caption %>
   <%= post.location %>
-  <%= image_tag post.post_image %>
+  <%= image_tag post.post_image%>
 <% end %>
 
 <%= link_to "create post", new_post_path %>
+
+<!-- MiniMagick::Tool::Convert.new do |cvrt|
+ cvrt.size '300x300'
+ cvrt << 'xc:transparent'
+ cvrt.fill 'image.png'
+ cvrt.draw "circle 240,90 290,90"
+ cvrt.crop '100x100+190+40'
+ cvrt.repage.+
+ cvrt << 'circle.png'
+end -->
