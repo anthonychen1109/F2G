@@ -1,13 +1,22 @@
-<%= form_for @user do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %>
-<%= f.label :pro_image %>
-<%= f.text_field :pro_image %>
-<%= f.label :bio %>
-<%= f.text_field :bio %>
-<%= f.label :password %>
-<%= f.text_field :password %>
-<%= f.label :password_confirmation %>
-<%= f.text_field :password_confirmation %>
-<%= f.submit %>
-<% end  %>
+<div class="login-form card">
+  <div class="card-body">
+    <h1 class="card-title">Slothfulgram</h1>
+    <br />
+    <h6 class="card-subtitle mb-2 text-muted">Sign up to see photos and videos from your friends.</h6>
+    <%= form_for @user do |f| %>
+      <br />
+      <%= f.text_field :name, placeholder: "Name", class: 'login-input' %>
+      <%= f.text_field :pro_image, placeholder: "Image", class: 'login-input' %>
+      <%= f.text_field :bio, placeholder: "Bio", class: 'login-input' %>
+      <%= f.text_field :password, placeholder: "Password", class: 'login-input' %>
+      <%= f.text_field :password_confirmation, placeholder: "Password Confirmation", class: 'login-input' %>
+    <%= f.submit :class => 'login-btn btn btn-primary' %>
+    <% end  %>
+  </div>
+</div>
+
+<div class="login-form card">
+  <div class="card-body">
+    <h6>Have an account? <%= link_to "Login", login_path %></h6>
+  </div>
+</div>
