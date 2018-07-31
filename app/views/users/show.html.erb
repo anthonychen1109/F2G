@@ -20,7 +20,7 @@
       <% @posts.each do |post| %>
       <div class="user-posts">
         <div class="user-posts-image">
-          <%= image_tag post.post_pic, class: 'post-image' %>
+          <%= link_to image_tag(post.post_pic), comment_path(post), class: 'post-image' %>
         </div>
       </div>
       <% end %>
