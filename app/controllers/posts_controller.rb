@@ -1,4 +1,11 @@
 class PostsController < ApplicationController
+
+  before_action :authorized
+
+  def index
+    @posts = current_user.posts
+  end
+
   def new
     @post = Post.new
   end
@@ -19,6 +26,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:image, :location, :user_id)
+    params.require(:post).permit(:image, :location, :user_id, :post_image)
   end
 end
