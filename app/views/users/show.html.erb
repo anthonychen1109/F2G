@@ -1,11 +1,41 @@
-<h1>Name: <%= @user.name %></h1>
-<h2>Bio: <%= @user.bio %></h2>
-<%= image_tag @user.avatar %>
+<div class="container">
+  <div class="user-show">
+    <div class="user-info">
+      <div>
+        <h5 class="profile-name"><%= @user.name.downcase.titleize %></h5>
+      </div>
+      <div>
+        <%= image_tag @user.avatar %>
+      </div>
+    </div>
 
-<% @posts.each do |post| %>
-  <%= post.caption %>
-  <%= post.location %>
-  <%= image_tag post.post_image %>
-<% end %>
+    <div class="user-bio">
+      <div>
+        <h6>Bio:</h6>
+      </div>
+      <div>
+        <p><%= @user.bio %></p>
+      </div>
+    </div>
+    <hr/>
 
-<%= link_to "create post", new_post_path %>
+    <div class="user-post-list">
+      <% @posts.each do |post| %>
+      <div class="user-posts">
+        <div class="user-posts-location">
+          <h6><%= post.location %></h6>
+        </div>
+        <div class="user-posts-image">
+          <%= image_tag post.post_image %>
+        </div>
+        <div class="user-posts-caption">
+          <p><%= post.caption %></p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+
+    <%= link_to "create post", new_post_path %>
+  </div>
+</div>
