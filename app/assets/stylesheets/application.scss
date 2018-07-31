@@ -69,6 +69,9 @@
 .user-show {
   padding-top: 10px;
 }
+.user-info {
+  display: flex;
+}
 
 .user-post-list {
   display: flex;
@@ -82,4 +85,8 @@
   .user-posts-location h6 {
     text-align: center;
   }
+}
+
+.user-image {
+  border-radius: 50%;
 }

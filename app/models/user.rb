@@ -5,6 +5,6 @@ has_secure_password
 has_one_attached :avatar
 
   def profile_pic
-    return self.avatar.variant(resize:"300x300")
+    return self.avatar.variant(resize:"100x100")
   end
 end

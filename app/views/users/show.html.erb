@@ -1,18 +1,15 @@
 <div class="container">
   <div class="user-show">
     <div class="user-info">
-      <div>
-        <h5 class="profile-name"><%= @user.name.downcase.titleize %></h5>
+      <div class="user-image">
+        <%= image_tag @user.profile_pic, class: 'user-image' %>
       </div>
       <div>
-        <%= image_tag @user.profile_pic %>
+        <h1 class="profile-name"><%= @user.name.downcase.titleize %></h1>
       </div>
     </div>
 
     <div class="user-bio">
-      <div>
-        <h6>Bio:</h6>
-      </div>
       <div>
         <p><%= @user.bio %></p>
       </div>
