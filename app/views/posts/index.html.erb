@@ -1,3 +1,5 @@
 <% @posts.each do |post| %>
   <%= post.location %>
+  <%= image_tag post.post_image %>
+  <%= post.caption %>
 <% end %>
