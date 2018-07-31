@@ -72,6 +72,10 @@
 .user-info {
   display: flex;
 }
+.create-post {
+  position: relative;
+  float: right;
+}
 
 .user-post-list {
   display: flex;
@@ -124,6 +128,28 @@
     min-height: 350px;
     min-width: 350px;
   }
+}
+
+.post-container {
+  border: 1px solid black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  max-height: 500px;
+}
+
+.post-show-block {
+  display: flex;
+  .post-show-image img {
+    max-height: 293px;
+  }
+}
+
+.post-show-image {
+  width: 60%;
+}
+
+.post-back-button {
+  margin: 10px;
 }
 
 // ########################## MODAL ##########################

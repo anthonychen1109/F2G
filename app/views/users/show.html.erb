@@ -7,6 +7,9 @@
       <div>
         <h1 class="profile-name"><%= @user.name.downcase.titleize %></h1>
       </div>
+      <div class="create-post">
+        <%= link_to "create post", new_post_path, class: 'btn btn-primary' %>
+      </div>
     </div>
 
     <div class="user-bio">
@@ -20,15 +23,12 @@
       <% @posts.each do |post| %>
       <div class="user-posts">
         <div class="user-posts-image">
-          <%= image_tag(post.post_pic) %>
+          <%= link_to image_tag(post.post_pic), post_path(post) %>
         </div>
       </div>
 
       <% end %>
     </div>
 
-
-
-    <%= link_to "create post", new_post_path %>
   </div>
 </div>
