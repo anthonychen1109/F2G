@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :authorized
 
   def index
-    @posts = current_user.posts
+    @posts = Post.all
   end
 
   def new

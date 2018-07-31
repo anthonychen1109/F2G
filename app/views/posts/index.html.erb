@@ -2,4 +2,8 @@
   <%= post.location %>
   <%= image_tag post.post_image %>
   <%= post.caption %>
+  <% post.comments.each do |content| %>
+    <%= content.content %>
+  <% end %>
+  <%= link_to "Comment", comments_path %>
 <% end %>
