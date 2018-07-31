@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(session[:user_id])
     @posts = current_user.posts
+    @all_posts = Post.all
   end
 
   private

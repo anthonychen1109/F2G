@@ -1,9 +1,18 @@
-<% @posts.each do |post| %>
-  <%= post.location %>
-  <%= image_tag post.post_image %>
-  <%= post.caption %>
-  <% post.comments.each do |content| %>
-    <%= content.content %>
-  <% end %>
-  <%= link_to "Comment", comments_path %>
-<% end %>
+<%= link_to "User page", user_path(@user), class: 'btn btn-secondary post-back-button'%>
+<div class="container">
+  <div class="user-show">
+
+    <div class="user-post-list">
+      <% @posts.each do |post| %>
+      <div class="user-posts">
+        <%= post.user.name %>
+        <div class="user-posts-image">
+          <%= link_to image_tag(post.post_pic), post_path(post) %>
+        </div>
+      </div>
+
+      <% end %>
+    </div>
+
+  </div>
+</div>

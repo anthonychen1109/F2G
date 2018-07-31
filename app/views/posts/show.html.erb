@@ -1,4 +1,6 @@
-<%= link_to "<", user_path(@post.user), class: 'btn btn-secondary post-back-button'%>
+<%= link_to "User page", user_path(@post.user), class: 'btn btn-secondary post-back-button'%>
+<%= link_to "Post page", posts_path, class: 'btn btn-secondary post-back-button'%>
+
 <div class="container">
   <div class="post-container">
     <div class="post-show">
