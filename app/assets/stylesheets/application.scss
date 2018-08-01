@@ -12,6 +12,8 @@
  *
  */
  @import "bootstrap";
+ @import "font-awesome";
+ @import 'font-awesome.css';
 
  // body {
  //   background: image-url("Flatiron-School.jpg") no-repeat center center fixed;
@@ -224,7 +226,10 @@
   max-height: 500px;
   width: 100%;
   justify-content: space-around;
-  overflow: hidden;
+  // overflow: hidden;
+  overflow-y: scroll;
+
+  margin-bottom: 40px;
   .post-individual-image {
     display: flex;
     padding: 0;
@@ -239,6 +244,10 @@
       padding-left: 10px;
     }
   }
+}
+
+.post-individual-pic-post {
+  overflow: hidden;
 }
 
 .post-individual-right {
@@ -263,5 +272,16 @@
 .post-individual-comment-message {
   border: 1px solid black;
   background-color: #f5f5dc;
+  margin-bottom: 40px;
   padding: 10px;
+}
+
+.post-individual-icons {
+  display: flex;
+  justify-content: space-around;
+  max-width: 50%;
+}
+
+.hearticon {
+  color: grey;
 }
