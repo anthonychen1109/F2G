@@ -4,7 +4,7 @@
     <br />
     <%= form_tag sessions_path do %>
       <%= text_field_tag :name, nil, placeholder: 'Name', class: 'login-input' %>
-      <%= text_field_tag :password, nil, placeholder: "Password", class: 'login-input' %>
+      <%= password_field_tag :password, nil, placeholder: "Password", class: 'login-input' %>
 
       <%= submit_tag "Log in", class: 'login-btn btn btn-primary' %>
     <% end %>

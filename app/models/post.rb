@@ -4,6 +4,8 @@ class Post < ActiveRecord::Base
   has_one_attached :post_image
   acts_as_commontable
 
+  attr_accessor :likes
+
   def post_pic
     return self.post_image.variant(resize:"300x300")
   end

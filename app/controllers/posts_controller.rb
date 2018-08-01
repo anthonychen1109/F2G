@@ -24,6 +24,16 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  # def upvote
+  #   @post = Post.find(params[:id])
+  #   @post.likes += 1
+  # end
+  #
+  # def downvote
+  #   @post = Post.find(params[:id])
+  #   @post.likes -= 1
+  # end
+
 
   private
   def post_params
