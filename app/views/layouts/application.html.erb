@@ -10,15 +10,12 @@
   </head>
 
   <body>
-    <!-- <h2>Slothfulgram</h2> -->
     <% if logged_in? %>
-      <div class="logout-button">
-        <%= button_to "Logout", logout_path, method: :delete, class: 'btn btn-primary' %>
-      </div>
+        <%= yield %>
     <% else %>
-      <!-- <%= link_to "Login", login_path %> / <%= link_to "Sign up", signup_path %> -->
+      <div class="background">
+        <%= yield %>
+      </div>
     <% end %>
-    </nav>
-    <%= yield %>
   </body>
 </html>

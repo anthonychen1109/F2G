@@ -1,26 +1,49 @@
+<div class="header container">
+
+  <div class="header-left">
+    <%= image_tag "flatiron.png" %>
+    <h2>Flat-a-gram</h2>
+  </div>
+
+  <div class="header-right">
+    <% if logged_in? %>
+      <div class="logout-button">
+        <%= button_to "Logout", logout_path, method: :delete, class: 'btn btn-primary' %>
+      </div>
+    <% else %>
+      <!-- <%= link_to "Login", login_path %> / <%= link_to "Sign up", signup_path %> -->
+    <% end %>
+  </div>
+
+</div>
+<hr />
 <div class="container">
   <div class="user-show">
     <div class="user-info">
+
       <div class="user-image">
         <%= image_tag @user.profile_pic, class: 'user-image' %>
       </div>
+
       <div>
         <h1 class="profile-name"><%= @user.name.downcase.titleize %></h1>
+        <h5><%= "#{@user.posts.count} posts" %></h5>
+        <div class="user-bio">
+          <div>
+            <p><%= @user.bio %></p>
+          </div>
+        </div>
       </div>
+
       <div class="create-post">
         <%= link_to "Create Post", new_post_path, class: 'btn btn-primary' %>
       </div>
+
       <div class="see-post">
         <%= link_to "See All Posts", posts_path, class: 'btn btn-primary' %>
       </div>
-    </div>
 
-    <div class="user-bio">
-      <div>
-        <p><%= @user.bio %></p>
-      </div>
     </div>
-    <hr/>
 
     <div class="user-post-list">
       <% @posts.each do |post| %>
