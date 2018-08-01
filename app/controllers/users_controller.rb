@@ -22,6 +22,14 @@ class UsersController < ApplicationController
     @all_posts = Post.all
   end
 
+  def edit
+    @user = User.find(session[:user_id])
+  end
+
+  def update
+    @user = User.update(user_params)
+  end
+
   private
   def user_params
     params.require(:user).permit(:name, :bio, :pro_image, :password, :password_confirmation, :avatar)

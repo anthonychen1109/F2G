@@ -26,7 +26,12 @@
       </div>
 
       <div>
-        <h1 class="profile-name"><%= @user.name.downcase.titleize %></h1>
+
+        <div class="profile">
+          <h1 class="profile-name"><%= @user.name.downcase.titleize %></h1>
+          <%= link_to "Edit Profile", edit_user_path, class: 'btn btn-lighten' %>
+        </div>
+
         <h5><%= "#{@user.posts.count} posts" %></h5>
         <div class="user-bio">
           <div>
@@ -35,14 +40,15 @@
         </div>
       </div>
 
-      <div class="create-post">
-        <%= link_to "Create Post", new_post_path, class: 'btn btn-primary' %>
-      </div>
+    </div>
 
+    <div class="post-buttons">
       <div class="see-post">
         <%= link_to "See All Posts", posts_path, class: 'btn btn-primary' %>
       </div>
-
+      <div class="create-post">
+        <%= link_to "Create Post", new_post_path, class: 'btn btn-primary' %>
+      </div>
     </div>
 
     <div class="user-post-list">
