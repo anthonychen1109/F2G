@@ -5,12 +5,16 @@ class CommentsController < ApplicationController
   end
 
   def new
-    @comment = Comment.new
+    @comment = Comment.new(post_id: params[:post_id], user_id: params[:user_id])
   end
 
   def create
-    @comment = Comment.create(comment_params)
-      redirect_to post_path(@comment)
+    @comment = Comment.new(comment_params)
+    if @comment.save
+      redirect_to post_path(@comment.post_id)
+    else
+      render :new
+    end
   end
 
   def show

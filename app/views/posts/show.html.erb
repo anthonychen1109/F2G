@@ -1,34 +1,43 @@
-<%= link_to "User page", user_path(@post.user), class: 'btn btn-secondary post-back-button'%>
-<%= link_to "Post page", posts_path, class: 'btn btn-secondary post-back-button'%>
+<div class="header container">
 
-<div class="container">
-  <div class="post-container">
-    <div class="post-show">
-      <br />
-      <div class="post-show-block">
-        <div class="post-show-image">
-          <%= image_tag @post.post_image %>
-        </div>
-        <div>
-          <div class="post-show-location">
-            <div class="user-image">
-              <%= image_tag @user.profile_pic, class: 'user-image' %>
-            </div>
-            <%= @post.user.name %>
-          </div>
-          <div class="post-show-location">
-            <%= @post.location %>
-          </div>
-          <br/>
-          <% @post.comments.each do |comment| %>
-            <%= comment.content %>
-          <% end %>
-        </div>
+  <div class="header-left">
+    <%= image_tag "flatiron.png" %>
+    <h2>Flat-a-gram</h2>
+  </div>
+
+  <div class="header-right">
+    <% if logged_in? %>
+      <div class="logout-button">
+        <%= button_to "Logout", logout_path, method: :delete, class: 'btn btn-primary' %>
       </div>
-      <div class="">
-        <%= @post.caption %>
-      </div>
+    <% else %>
+      <!-- <%= link_to "Login", login_path %> / <%= link_to "Sign up", signup_path %> -->
+    <% end %>
+  </div>
+
+  </div>
+  <hr />
+
+  <div class="post-buttons container">
+    <div class="see-post">
+      <%= link_to "User page", user_path(@post.user), class: 'btn btn-secondary post-back-button'%>
+    </div>
+    <div class="create-post">
+      <%= link_to "Post page", posts_path, class: 'btn btn-secondary post-back-button'%>
     </div>
   </div>
 
-</div>
+  <div class="container post-individual">
+    <div class="">
+      <%= image_tag @post.post_image %>      
+    </div>
+    <%= image_tag @user.profile_pic %>
+    <%= @post.user.name %>
+    <%= @post.location %>
+    <% @post.comments.each do |comment| %>
+      <%= comment.content %>
+    <% end %>
+    <%= @post.caption %>
+  </div>
+
+  <%= link_to "Comment",  new_comment_path(post_id: @post.id, user_id:@user.id)%>

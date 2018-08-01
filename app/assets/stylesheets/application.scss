@@ -113,6 +113,11 @@
   display: flex;
 }
 
+.user-profile {
+  margin-left: 40px;
+  max-width: 60%;
+}
+
 .user-show {
   padding-top: 10px;
 }
@@ -212,4 +217,9 @@
 
 .post-back-button {
   margin: 10px;
+}
+
+.post-individual {
+  border: 1px solid black;
+  max-height: 500px;
 }
