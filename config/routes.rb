@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   Rails.application.routes.draw do
     root 'users#new'
+    mount Commontator::Engine => '/commontator'
   end
 
   get 'signup', to: 'users#new', as: 'signup'

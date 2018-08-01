@@ -222,4 +222,46 @@
 .post-individual {
   border: 1px solid black;
   max-height: 500px;
+  width: 100%;
+  justify-content: space-around;
+  overflow: hidden;
+  .post-individual-image {
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+  .post-individual-profile {
+    display: flex;
+    padding-top: 10px;
+    .post-individual-profile-info {
+      display: flex;
+      flex-direction: column;
+      padding-left: 10px;
+    }
+  }
+}
+
+.post-individual-right {
+  margin-left: 40px;
+  width: 100%;
+}
+
+.post-individual-comment {
+  display: flex;
+  flex-direction: column;
+  img {
+    border-radius: 50%;
+  }
+  .post-individual-comment-profile {
+    display: flex;
+  }
+  .post-individual-comment-content {
+    padding-left: 5%;
+  }
+}
+
+.post-individual-comment-message {
+  border: 1px solid black;
+  background-color: #f5f5dc;
+  padding: 10px;
 }
