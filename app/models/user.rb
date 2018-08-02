@@ -19,4 +19,11 @@ class User < ActiveRecord::Base
   def profile_pic_post
     return self.avatar.variant(resize:"25x25")
   end
+
+  def add_default_cover
+    unless self.avatar.attached?
+      self.avatar.attach(io: File.open(Rails.root.join("app", "assets", "images", "default_avatar.png")), filename: 'default_avatar.png')
+    end
+  end
+
 end
