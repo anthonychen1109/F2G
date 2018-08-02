@@ -3,10 +3,13 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show, :edit, :update]
   resources :posts, only: [:new, :create, :show, :index, :edit, :update]
   resources :comments, only: [:new, :create, :index, :show]
+  resources :chatrooms, param: :id
+  resources :messages
 
   Rails.application.routes.draw do
     root 'users#new'
-    mount Commontator::Engine => '/commontator'
+    # mount Commontator::Engine => '/commontator'
+    mount ActionCable.server => '/cable'
   end
 
   get 'signup', to: 'users#new', as: 'signup'
