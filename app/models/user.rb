@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
+  has_many :messages
+  has_many :chatrooms, through: :messages
   has_secure_password
   has_one_attached :avatar
   acts_as_commontator

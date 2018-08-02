@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_08_01_135102) do
+=======
+ActiveRecord::Schema.define(version: 2018_08_02_184647) do
+>>>>>>> websocket
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +43,7 @@ ActiveRecord::Schema.define(version: 2018_08_01_135102) do
   create_table "chatrooms", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "topic"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -90,6 +95,8 @@ ActiveRecord::Schema.define(version: 2018_08_01_135102) do
 
   create_table "messages", force: :cascade do |t|
     t.string "message"
+    t.integer "user_id"
+    t.integer "chatroom_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
