@@ -1,4 +1,4 @@
-<div class="header container">
+<div class="header">
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#"><div class="header-left">
@@ -15,8 +15,9 @@
           <% if logged_in? %>
         <div
           class="logout-button">
+          <a class="logout-button" href="#"> <%=link_to "UserPage", user_path(@user)%> <span class="sr-only">(current)</span></a>
           <a class="logout-button" href="#"> <%=link_to "PostsFeed", posts_path%> <span class="sr-only">(current)</span></a>
-
+          <a class="logout-button" href="#"> <%=link_to "EditPost", edit_post_path%> <span class="sr-only">(current)</span></a>
           <%= link_to "Logout", logout_path, method: :delete %>
         </div>
     <% end %>
@@ -27,15 +28,6 @@
 </div>
 <hr />
   <hr />
-
-  <div class="post-buttons container">
-    <div class="see-post">
-      <%= link_to "User page", user_path(@post.user), class: 'btn btn-primary post-back-button'%>
-    </div>
-    <div class="edit-post">
-      <%= link_to "Edit post", edit_post_path, class: 'btn btn-primary post-back-button'%>
-    </div>
-  </div>
 
   <div class="post-individual">
     <div class="post-individual-image">

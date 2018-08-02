@@ -201,7 +201,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50rem;
-  margin-top: 100px;
+  margin-top: 200px;
   margin-bottom: 40px;
 }
 
@@ -345,4 +345,16 @@
 .logout-button {
    word-spacing: 2em;
   line-height: 90px;
+}
+
+.nav-buttons {
+  display: flex;
+  div {
+    margin: 20px;
+  }
+}
+.logout {
+  display: block;
+  position: relative;
+  float: right;
 }

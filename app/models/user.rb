@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :chatrooms, through: :messages
   has_secure_password
   has_one_attached :avatar
+  # acts_as_followable
   # acts_as_commontator
   validates :name, presence: true
   validates :password, length: { minimum: 5 }
