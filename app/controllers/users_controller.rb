@@ -27,7 +27,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.update(user_params)
+    @user = User.find(session[:user_id])
+    @user.update(user_params)
     if @user.save
       redirect_to user_path(@user)
     else
