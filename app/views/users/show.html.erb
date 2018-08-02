@@ -47,10 +47,12 @@
       <div class="see-post">
         <%= link_to "See All Posts", posts_path, class: 'btn btn-primary' %>
       </div>
+
       <div class="create-post">
         <%= link_to "Create Post", new_post_path, class: 'btn btn-primary' %>
       </div>
     </div>
+
 
     <div class="user-post-list">
       <% @posts.each do |post| %>
