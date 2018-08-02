@@ -13,6 +13,9 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    # if !@post.post_image.attached?
+    #   flash[:error] = "We were unable to destroy the Item"
+    # end
     if @post.save
       redirect_to user_path(@post)
     else
