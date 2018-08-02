@@ -1,10 +1,19 @@
-<%= form_for @post do |f| %>
-<%= f.label :caption%>
-<%= f.text_field :caption %>
-<%= f.label :location %>
-<%= f.text_field :location %>
-<%= f.label :post_image %>
-<%= f.file_field :post_image %>
-<%= f.hidden_field :user_id, :value => @user %>
-<%= f.submit %>
-<% end  %>
+
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Upload a New Post</h1>
+    <p class="lead"> Write a caption, set a location, and upload a new picture for the rest of the world to see!</p>
+
+    <%= form_for @post do |f| %>
+    <%= f.label :location %>
+    <%= f.text_field :location %><p>
+    <%= f.label :post_image %>
+    <%= f.file_field :post_image %><p>
+    <%= f.label :caption%>
+    <%= f.text_field :caption %><p>
+    <%= f.hidden_field :user_id, :value => @user %>
+    <%= f.submit "Post", class: 'btn btn-primary'%>
+    <% end  %>
+  </div>
+</div>
