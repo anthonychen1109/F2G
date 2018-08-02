@@ -24,6 +24,19 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.update(post_params)
+    if @post.save
+      redirect_to post_path(@post)
+    else
+      render :edit
+    end
+  end
+
   # def upvote
   #   @post = Post.find(params[:id])
   #   @post.likes += 1
