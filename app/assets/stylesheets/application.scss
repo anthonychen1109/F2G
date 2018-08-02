@@ -326,3 +326,10 @@
 .edit-field {
   background-color: #f5deb3;
 }
+
+.edit-back {
+  display: flex;
+  .edit-btn {
+    margin-top: 10px;
+  }
+}
