@@ -4,6 +4,9 @@ class User < ActiveRecord::Base
   has_secure_password
   has_one_attached :avatar
   acts_as_commontator
+  validates :name, presence: true
+  validates :password, length: { minimum: 5 }
+  validates_format_of :name, :with => /\A[^0-9`!@#\$%\^&*+_='"]+\z/
 
   def profile_pic
     return self.avatar.variant(resize:"200x200")
