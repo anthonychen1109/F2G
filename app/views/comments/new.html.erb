@@ -1,7 +1,36 @@
-<%= form_for @comment do |f| %>
-<%= f.label :content %>
-<%= f.text_field :content %>
-<%= f.hidden_field :post_id %>
-<%= f.hidden_field :user_id %>
-<%= f.submit %>
-<% end  %>
+<div class="header container">
+
+  <div class="header-left">
+    <%= image_tag "flatiron.png" %>
+    <h2>Flat-a-gram</h2>
+  </div>
+
+  <div class="header-right">
+    <% if logged_in? %>
+    <div class="edit-back">
+      <div class="edit-btn container">
+        <%= link_to "Go back", user_path(@user), class: "btn btn-primary" %>
+      </div>
+      <div class="logout-button">
+        <%= button_to "Logout", logout_path, method: :delete, class: 'btn btn-primary' %>
+      </div>
+    </div>
+    <% else %>
+      <!-- <%= link_to "Login", login_path %> / <%= link_to "Sign up", signup_path %> -->
+    <% end %>
+  </div>
+
+  </div>
+  <hr />
+
+
+<div class="container-fluid">
+
+  <%= form_for @comment do |f| %>
+  <%= f.hidden_field :content %> <p>
+  <%= f.text_area :content, cols: "45", rows: "2", placeholder: "Add a comment..." %><p>
+  <%= f.hidden_field :post_id %>
+  <%= f.hidden_field :user_id %>
+  <%= f.submit "Post", class: 'btn btn-primary' %><p>
+  <% end  %>
+</div>

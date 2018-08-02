@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_01_144731) do
+ActiveRecord::Schema.define(version: 2018_08_01_135102) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,26 +83,11 @@ ActiveRecord::Schema.define(version: 2018_08_01_144731) do
     t.index ["commontable_id", "commontable_type"], name: "index_commontator_threads_on_c_id_and_c_type", unique: true
   end
 
-  create_table "conversations", force: :cascade do |t|
-    t.integer "sender_id"
-    t.integer "recipient_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "messages", force: :cascade do |t|
-    t.text "body"
-    t.integer "convo_id"
-    t.integer "user_id"
-    t.boolean "read", default: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "posts", force: :cascade do |t|
     t.string "caption"
     t.string "location"
     t.integer "user_id"
+    t.integer "likes", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

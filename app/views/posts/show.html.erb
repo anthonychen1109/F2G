@@ -96,9 +96,10 @@
           </div>
         </div>
         <hr/>
-        <div class="post-individual-comment-message">
-          <%= link_to "Leave a comment",  new_comment_path(post_id: @post.id, user_id:@user.id)%>
-        </div>
+        <div class=“post-individual-comment-message”>
+          <%= link_to "post a new comment", new_comment_path(post_id: @post.id, user_id:@user.id)%> 
+
+     </div>
       </div>
 
     </div>
