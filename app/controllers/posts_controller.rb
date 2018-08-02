@@ -29,7 +29,9 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.update(post_params)
+    @post = Post.find(params[:id])
+    @user = current_user
+    @post.update(post_params)
     if @post.save
       redirect_to post_path(@post)
     else

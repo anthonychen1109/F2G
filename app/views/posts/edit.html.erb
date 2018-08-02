@@ -18,15 +18,6 @@
   </div>
   <hr />
 
-  <div class="post-buttons container">
-    <div class="see-post">
-      <%= link_to "User page", user_path(@post.user), class: 'btn btn-secondary post-back-button'%>
-    </div>
-    <div class="create-post">
-      <%= link_to "Post page", posts_path, class: 'btn btn-secondary post-back-button'%>
-    </div>
-  </div>
-
   <div class="post-individual">
     <div class="post-individual-image">
 
@@ -48,12 +39,9 @@
             <div class="">
               <%= form_for @post do |f| %>
                 <%= f.text_field :location, class: "edit-field" %>
-              <% end %>
-            </div>
-
-            <div class="">
-              <%= form_for @post do |f| %>
                 <%= f.text_field :caption, class: "edit-field" %>
+                <%= f.hidden_field :user_id, :value => @user.id %>
+                <%= f.submit "Submit changes", class: "btn btn-primary" %>
               <% end %>
             </div>
           </div>
