@@ -9,6 +9,7 @@ class MessagesController < ApplicationController
         user: message.user.name
       head :ok
     end
+
   end
 
   private

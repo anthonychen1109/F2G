@@ -34,12 +34,7 @@
           <h1 class="profile-name"><%= @user.name.downcase.titleize %></h1>
         </div>
 
-        <div>
-          <%= form_for @user do |f| %>
-            <%= f.label :avatar, "Edit your profile image" %>
-            <%= f.file_field :avatar, class: 'login-input' %>
-          <% end %>
-        </div>
+
       </div>
 
 
@@ -51,6 +46,8 @@
           <div class="edit-name-bio">
             <div class="edit-blocks">
               <div>
+                <%= f.label :avatar, "Edit your profile image" %>
+                <%= f.file_field :avatar, class: 'login-input' %>
                 <%= f.label :name, "Change your name" %>
               </div>
               <div>

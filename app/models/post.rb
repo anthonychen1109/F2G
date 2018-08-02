@@ -2,7 +2,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_many :comments
   has_one_attached :post_image
-  acts_as_commontable
+  # acts_as_commontable
 
   attr_accessor :likes
 
