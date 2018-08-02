@@ -7,15 +7,20 @@
 
   <div class="header-right">
     <% if logged_in? %>
+    <div class="edit-back">
+      <div class="edit-btn container">
+        <%= link_to "Go back", user_path(@user), class: "btn btn-primary" %>
+      </div>
       <div class="logout-button">
         <%= button_to "Logout", logout_path, method: :delete, class: 'btn btn-primary' %>
       </div>
+    </div>
     <% else %>
       <!-- <%= link_to "Login", login_path %> / <%= link_to "Sign up", signup_path %> -->
     <% end %>
   </div>
 
-</div>
+  </div>
   <hr />
 
 <%= link_to "User page", user_path(@user), class: 'btn btn-primary post-back-button'%>
