@@ -190,6 +190,35 @@
   overflow: hidden;
 }
 
+.edit-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50rem;
+}
+
+.edit-user-avatar {
+  display: flex;
+  div {
+    margin: 0 auto;
+  }
+}
+
+.edit-name-bio {
+  display: flex;
+  flex-direction: column;
+  div {
+    margin: 0 auto;
+  }
+  .edit-block {
+    div {
+      display: flex;      
+    }
+  }
+}
+
+
 // ########################## POST ##########################
 .post-show {
   display: flex;

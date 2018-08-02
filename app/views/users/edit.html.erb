@@ -1,0 +1,71 @@
+<div class="header container">
+
+  <div class="header-left">
+    <%= image_tag "flatiron.png" %>
+    <h2>Flat-a-gram</h2>
+  </div>
+
+  <div class="header-right">
+    <% if logged_in? %>
+      <div class="logout-button">
+        <%= button_to "Logout", logout_path, method: :delete, class: 'btn btn-primary' %>
+      </div>
+    <% else %>
+      <!-- <%= link_to "Login", login_path %> / <%= link_to "Sign up", signup_path %> -->
+    <% end %>
+  </div>
+
+</div>
+<div class="edit-form card">
+  <div class="card-body">
+
+    <div class="edit-user-avatar">
+      <div class="user-image">
+        <%= image_tag @user.profile_pic, class: 'user-image' %>
+      </div>
+
+      <div>
+        <div class="profile">
+          <h1 class="profile-name"><%= @user.name.downcase.titleize %></h1>
+        </div>
+
+        <div>
+          <%= form_for @user do |f| %>
+            <%= f.label :avatar, "Edit your profile image" %>
+            <%= f.file_field :avatar, class: 'login-input' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+      <div>
+        <%= form_for @user do |f| %>
+          <br />
+          <div class="edit-name-bio">
+            <div class="edit-blocks">
+              <div>
+                <%= f.label :name, "Change your name" %>
+              </div>
+              <div>
+                <%= f.text_field :name %>
+              </div>
+            </div>
+            <br/>
+            <div class="edit-blocks">
+              <div>
+                <%= f.label :bio, "Edit your bio" %>
+              </div>
+              <div>
+                <%= f.text_area :bio, cols: "30", rows: "10" %>
+              </div>
+            </div>
+          </div>
+
+
+
+          <%= f.submit "Sign Up", class: 'login-btn btn btn-primary' %>
+        <% end  %>
+      </div>
+
+  </div>
+</div>
