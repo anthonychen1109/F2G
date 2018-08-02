@@ -191,33 +191,38 @@
 }
 
 .edit-form {
+  background-color: #f5f5dc;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50rem;
+  margin-top: 100px;
+  margin-bottom: 40px;
 }
 
 .edit-user-avatar {
   display: flex;
+  justify-content: space-evenly;
   div {
     margin: 0 auto;
   }
+}
+
+.back-btn {
+  max-width: 100px;
 }
 
 .edit-name-bio {
   display: flex;
   flex-direction: column;
-  div {
-    margin: 0 auto;
-  }
-  .edit-block {
+  .edit-blocks {
     div {
-      display: flex;      
+      display: flex;
+      justify-content: center;
     }
   }
 }
-
 
 // ########################## POST ##########################
 .post-show {

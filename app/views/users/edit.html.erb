@@ -24,7 +24,7 @@
         <%= image_tag @user.profile_pic, class: 'user-image' %>
       </div>
 
-      <div>
+      <div class="edit-profile">
         <div class="profile">
           <h1 class="profile-name"><%= @user.name.downcase.titleize %></h1>
         </div>
@@ -36,6 +36,11 @@
           <% end %>
         </div>
       </div>
+
+      <div class="back-btn container">
+        <%= link_to "Go back", user_path(@user), class: "btn btn-primary" %>
+      </div>
+
     </div>
 
       <div>
@@ -63,7 +68,7 @@
 
 
 
-          <%= f.submit "Sign Up", class: 'login-btn btn btn-primary' %>
+          <%= f.submit "Submit", class: 'edit-btn btn btn-primary' %>
         <% end  %>
       </div>
 
