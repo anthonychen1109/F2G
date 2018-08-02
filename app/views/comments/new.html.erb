@@ -17,6 +17,7 @@
           class="logout-button">
           <a class="logout-button" href="#"> <%= link_to "UserPage", user_path(@user)%> <span class="sr-only">(current)</span></a>
           <a class="logout-button" href="#"> <%= link_to "CreatePost", new_post_path%> <span class="sr-only">(current)</span></a>
+          <a class="logout-button" href="#"> <%= link_to "PostFeed", posts_path%> <span class="sr-only">(current)</span></a>
 
           <%= link_to "Logout", logout_path, method: :delete %>
         </div>
