@@ -395,7 +395,7 @@
 }
 
 .test-box-main {
-  border: 1px solid black;
+  // border: 1px solid black;
   display: flex;
   width: 80%;
   margin: 0 auto;
@@ -414,4 +414,18 @@
   img {
     border-radius: 50%;
   }
+}
+
+.analytics {
+  padding: 40px 0;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+
+.delete-post-btn {
+  max-width: 100px;
+}
+
+.user-posts-image {
+  margin-top: 20px;
 }

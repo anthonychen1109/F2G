@@ -35,12 +35,18 @@
 
 </div>
 <hr />
-<h1>Post by users: </h1>
-
-<%= pie_chart Post.all.group(:user_id).count %>
-
+<h1 class="analytics">Posts by users </h1>
 <%= line_chart @posts.map { |post|
     {name: User.find(post.user_id).name, data: Post.all.group(:user_id).count}
 } %>
+<%= pie_chart Post.all.group(:user_id).count %>
+<h1 class="analytics">Comments by users </h1>
+  <%= line_chart @posts.map { |post|
+    {name: User.find(post.user_id).name, data: Comment.all.group(:user_id).count}
+  } %>
+
+  <%= pie_chart Comment.all.group(:user_id).count %>
+
+
 
 <pie-chart :data="[['Blueberry', 44], ['Strawberry', 23]]"></pie-chart>

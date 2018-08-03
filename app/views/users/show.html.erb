@@ -74,7 +74,7 @@
     <div class="user-post-list">
       <% @posts.each do |post| %>
       <div class="user-posts">
-        <%= link_to "delete", delete_post_path(post), method: :delete %>
+        <%= link_to "delete", delete_post_path(post), method: :delete, class: "btn btn-warning delete-post-btn" %>
         <div class="user-posts-image">
           <%= link_to image_tag(post.post_pic), post_path(post) %>
         </div>
