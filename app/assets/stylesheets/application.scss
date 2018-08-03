@@ -429,3 +429,28 @@
 .user-posts-image {
   margin-top: 20px;
 }
+
+.big-div {
+  display: flex;
+}
+
+.big-div-left {
+  img {
+    border-radius: 50%;
+  }
+}
+
+.big-div-right {
+  .big-div-top, .big-div-bot {
+    margin-left: 20px;
+  }
+}
+
+.big-div-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-posts-image {
+  margin-bottom: 40px;
+}

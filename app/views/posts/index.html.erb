@@ -36,7 +36,17 @@
       <% @posts.each do |post| %>
 
       <div class="user-posts">
-        <%= post.user.name %>
+        <div class="big-div">
+          <div class="big-div-left">
+            <%= image_tag post.user.profile_pic_post %>
+          </div>
+          <div class="big-div-right">
+            <div class="big-div-top">
+              <span><%= post.user.name %></span>
+              <span><%= post.location %></span>
+            </div>
+          </div>
+        </div>
         <div class="user-posts-image">
           <%= link_to image_tag(post.post_pic), post_path(post) %>
         </div>
