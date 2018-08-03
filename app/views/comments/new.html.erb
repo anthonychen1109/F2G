@@ -1,4 +1,4 @@
-<div class="header container">
+<div class="header">
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#"><div class="header-left">
@@ -13,11 +13,10 @@
         <li class="nav-item active">
         </li>
           <% if logged_in? %>
-        <div
-          class="logout-button">
-          <a class="logout-button" href="#"> <%= link_to "UserPage", user_path(@user)%> <span class="sr-only">(current)</span></a>
-          <a class="logout-button" href="#"> <%= link_to "CreatePost", new_post_path%> <span class="sr-only">(current)</span></a>
-          <a class="logout-button" href="#"> <%= link_to "PostFeed", posts_path%> <span class="sr-only">(current)</span></a>
+        <div class="logout-button">
+          <%= link_to "UserPage", user_path(@user)%>
+          <%= link_to "CreatePost", new_post_path%>
+          <%= link_to "PostFeed", posts_path%>
 
           <%= link_to "Logout", logout_path, method: :delete %>
         </div>

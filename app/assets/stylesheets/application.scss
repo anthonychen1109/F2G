@@ -289,6 +289,12 @@
   }
 }
 
+.post-individual-pic-post {
+  img {
+    border-radius: 50%;    
+  }
+}
+
 .post-individual-right {
   margin-left: 40px;
   padding: 20px;
@@ -343,12 +349,15 @@
 }
 
 .logout-button {
-   word-spacing: 2em;
+  word-spacing: 2em;
   line-height: 90px;
 }
 
 .nav-buttons {
   display: flex;
+  @media only and (max-width: 800px) {
+    flex-direction: column;
+  }
   div {
     margin: 20px;
   }
