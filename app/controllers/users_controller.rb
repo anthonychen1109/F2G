@@ -1,5 +1,11 @@
 class UsersController < ApplicationController
 
+  def index
+    @posts = Post.all
+    @users = User.all
+    @user = current_user.id
+  end
+
   def new
     @user = User.new
   end

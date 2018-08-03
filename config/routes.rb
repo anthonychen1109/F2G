@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :users, only: [:new, :create, :show, :edit, :update]
+  resources :users, only: [:new, :create, :show, :edit, :update, :index]
   resources :posts, only: [:new, :create, :show, :index, :edit, :update]
   resources :comments, only: [:new, :create, :index, :show]
   resources :chatrooms, param: :id

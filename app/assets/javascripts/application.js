@@ -18,3 +18,6 @@
 //= require popper
 //= require bootstrap
 //= require_tree ./channels
+
+//= require chartkick
+//= require turbolinks
