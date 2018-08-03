@@ -13,6 +13,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    # @post.post_image.attach(io: File.open('./assets/images/posts/'), filename: 'download.jpeg')
     # if !@post.post_image.attached?
     #   flash[:error] = "We were unable to destroy the Item"
     # end
