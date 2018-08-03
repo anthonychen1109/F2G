@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   post 'sessions', to: 'sessions#create', as: 'sessions'
   delete 'logout', to: 'sessions#destroy', as: 'logout'
+  delete 'post/:id', to: 'posts#destroy', as: 'delete_post'
   # post 'upvote', to: 'posts#upvote', as: 'upvote'
   # post 'downvote', to: 'posts#downvote', as: 'downvote'
 

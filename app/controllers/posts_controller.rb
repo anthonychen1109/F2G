@@ -43,6 +43,13 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    @user = current_user.id
+    redirect_to user_path(@user)
+  end
+
   # def upvote
   #   @post = Post.find(params[:id])
   #   @post.likes += 1
