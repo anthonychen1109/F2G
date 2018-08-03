@@ -17,8 +17,10 @@
           class="logout-button">
           <a class="logout-button" href="#"> <%=link_to "UserPage", user_path(@user)%> <span class="sr-only">(current)</span></a>
           <a class="logout-button" href="#"> <%=link_to "PostsFeed", posts_path%> <span class="sr-only">(current)</span></a>
+        <% if @post.user == @user %>
           <a class="logout-button" href="#"> <%=link_to "EditPost", edit_post_path%> <span class="sr-only">(current)</span></a>
           <%= link_to "Logout", logout_path, method: :delete %>
+          <% end %>
         </div>
     <% end %>
       </ul>
