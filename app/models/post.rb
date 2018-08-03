@@ -14,4 +14,8 @@ class Post < ActiveRecord::Base
     return self.post_image.variant(resize:"500x500")
   end
 
+  def post_pic_display
+    return self.post_image.variant(resize:"500x500")
+  end
+
 end

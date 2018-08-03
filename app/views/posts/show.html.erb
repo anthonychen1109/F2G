@@ -27,38 +27,34 @@
 
 </div>
 <hr />
-  <hr />
 
-  <div class="post-individual">
-    <div class="post-individual-image">
+  <div class="test-box-main">
+    <div class="test-box-left">
+      <%= image_tag @post.post_pic_display %>
+    </div>
 
-      <div class="post-individual-pic-show">
-        <%= image_tag @post.post_pic_show %>
-      </div>
+    <div class="test-box-columns">
 
-      <div class="post-individual-right">
-        <div class="post-individual-profile">
-          <div>
-            <div class="post-individual-pic-post">
-              <%= image_tag @user.profile_pic_post %>
-            </div>
+    <div class="test-box">
+      <div class="test-box-img-name-location-caption">
+        <div class="test-box-img-left">
+          <%= image_tag @user.profile_pic_post %>
+        </div>
+        <div class="test-box-name-right">
+          <div class="test-box-row-1">
+            <b><%= @post.user.name %></b>
           </div>
-          <div class="post-individual-profile-info">
-            <div class="">
-              <b><%= @post.user.name %></b>
-            </div>
-            <div class="">
-              <%= @post.location %>
-            </div>
-
-            <div class="">
-              <%= @post.caption %>
-            </div>
+          <div class="test-box-row-2">
+            <%= @post.location %>
+          </div>
+          <div class="test-box-row-3">
+            <%= @post.caption %>
           </div>
         </div>
 
-        <div>
-          <hr />
+      </div>
+      <hr>
+      <div>
           <div class="post-individual-icons">
             <div class="likes">
               <i class="fa fa-heart hearticon"></i>
@@ -71,33 +67,34 @@
           </div>
           <hr />
 
-          <div class="">
-            <% @post.comments.each do |comment| %>
-              <div class="post-individual-comment">
+      <div class="">
+        <% @post.comments.each do |comment| %>
+          <div class="post-individual-comment">
 
-                <div class="post-individual-comment-profile">
-                  <div>
-                    <%= image_tag comment.user.profile_pic_post %>
-                  </div>
-                  <div>
-                    <b><%= comment.user.name %></b>
-                  </div>
-                </div>
-
-                <div class="post-individual-comment-content">
-                  <%= comment.content %>
-                </div>
+            <div class="post-individual-comment-profile">
+              <div>
+                <%= image_tag comment.user.profile_pic_post %>
               </div>
-              <br/>
-            <% end %>
+              <div>
+                <b><%= comment.user.name %></b>
+              </div>
+            </div>
+
+            <div class="post-individual-comment-content">
+              <%= comment.content %>
+            </div>
           </div>
-        </div>
-        <hr/>
-        <div class=“post-individual-comment-message”>
-          <%= link_to "post a new comment", new_comment_path(post_id: @post.id, user_id:@user.id)%>
-
-     </div>
+          <br/>
+        <% end %>
       </div>
-
     </div>
+    <hr/>
+    <div class=“post-individual-comment-message”>
+      <%= link_to "post a new comment", new_comment_path(post_id: @post.id, user_id:@user.id)%>
+    </div>
+    </div>
+
+      </div>
+    </div>
+
   </div>

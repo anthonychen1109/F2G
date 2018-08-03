@@ -11,6 +11,7 @@ gem 'popper_js', '~> 1.14.3'
 gem 'commontator'
 gem "font-awesome-rails"
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
+gem 'chartkick', '~> 1.2.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
