@@ -1,24 +1,27 @@
-# README
+# Flat-A-Gram
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+created by Anthony Chen
 
-Things you may want to cover:
+This project is built using Ruby on Rails with Bootstrap for styling.
 
-* Ruby version
+Flat-A-Gram is an instagram clone for users to share pictures and comment on pictures posted by other users.
 
-* System dependencies
+### Log-in Page
+![Alt text](./screenshots/login.png?raw=true "Login Screen")
+Home page for users to create an account or to log in if they already have an exist account.
 
-* Configuration
+### Profile Page
+![Alt text](./screenshots/profile.png?raw=true "Profile Screen")
+This is the profile page, users can create posts here.
 
-* Database creation
+### Feeds Page
+![Alt text](./screenshots/posts.png?raw=true "Feeds Screen")
+This is the main feeds page, it displays all the feeds from every user in the database.
 
-* Database initialization
+### Post Page
+![Alt text](./screenshots/post.png?raw=true "Post Screen")
+This is the detailed view of the post. It displays the description about the image along with comments from other users. If a user is logged in, he/she can comment on the post.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Analytics Page
+![Alt text](./screenshots/analytics.png?raw=true "Analytics Screen")
+This is the analytics page. It displays the number of posts each user has as well as the number of comments each user has made.
